@@ -1,35 +1,107 @@
+html, body {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
+  /* background-color: aqua; */
   font-size: 50px;
-  margin: 10px;
+  width: 65vw;
+  height: 45vh;
+  text-align: center;
+  padding-top: 25vh;
 }
 
 h2 {
+  /* background-color: aqua; */
+  font-family: monospace;
   font-size: 30px;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  color: #ccff00;
+  text-align: left;
+  transition: transform 0.3 ease
 }
 
 p {
+  /* background-color: aqua; */
   font-size: 20px;
   margin: 10px;
+  color: white;
+  text-align: left;
+  line-height: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-family: monospace;
+}
+
+h2:hover {
+  color: white;
+  transform: scale(1.5);
+  transform-origin: left;
+}
+
+section {
+  width: 65vw;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  scroll-snap-align: center;
+}
+
+.glowing {
+  text-shadow: 0 0 10px #8DB255, 0 0 10px #8DB255, 0 0 1px #8DB255, 0 0 3px #8DB255, 0 0 1px #8DB255, 0 0 5px #8DB255, 0 0 10px #8DB255;
+  align-items: center;
 }
 
 .about {
-  height: 100vh;
-  background-image: url('./assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   color: white;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  width: 65vw;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: normal;
+  margin: 0 auto;
+  scroll-snap-align: center;
 }
 
-.project {
-  background-color: aqua;
+#cursor1 {
+  color: white;
+  font-size: 60px;
+  font-weight: lighter;
+  animation: blink 1s step-end infinite;
+}
+
+#cursor2 {
+  color: black;
+  font-size: 35px;
+  font-weight: lighter;
+  animation: blink 1s step-end infinite;
+}
+
+#cursor3 {
+  color: black;
+  font-size: 25px;
+  font-weight: lighter;
+  animation: blink 1s step-end infinite;
+}
+
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
