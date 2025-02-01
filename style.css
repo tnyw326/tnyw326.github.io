@@ -1,9 +1,17 @@
-html, body {
+html {
   height: 100%;
   scroll-snap-type: y mandatory;
-  background-color: black;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
 
 * {
   margin: 0;
@@ -12,9 +20,8 @@ html, body {
 }
 
 h1 {
-  /* background-color: aqua; */
   font-size: 50px;
-  width: 65vw;
+  width: 100vw;
   height: 45vh;
   text-align: center;
   padding-top: 25vh;
@@ -29,7 +36,6 @@ h2 {
   margin-bottom: 20px;
   color: #ccff00;
   text-align: left;
-  transition: transform 0.3 ease
 }
 
 p {
@@ -44,20 +50,17 @@ p {
   font-family: monospace;
 }
 
-h2:hover {
-  color: white;
-  transform: scale(1.5);
-  transform-origin: left;
-}
-
 section {
-  width: 65vw;
+  background-color: black;
   justify-content: center;
   height: 100vh;
   display: flex;
   align-items: center;
   margin: 0 auto;
   scroll-snap-align: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 
 .glowing {
@@ -69,13 +72,18 @@ section {
   display: flex;
   color: white;
   text-align: center;
-  width: 65vw;
+  width: 100vw;
   justify-content: center;
   height: 100vh;
   display: flex;
   align-items: normal;
   margin: 0 auto;
-  scroll-snap-align: center;
+  overflow-y: scroll;
+}
+
+#after-intro {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #cursor1 {
@@ -97,6 +105,66 @@ section {
   font-size: 25px;
   font-weight: lighter;
   animation: blink 1s step-end infinite;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  padding: 15px 0;
+  z-index: 1; /* Ensures it stays on top */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  margin-right: 20px;
+}
+
+nav ul li a:hover {
+  color: #ccff00;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ccff00;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  transform: translateX(-50%) scale(0.8);
+}
+
+nav ul li a.active {
+  color: #ccff00; 
+}
+
+nav ul li a.active::after {
+  transform: translateX(-50%) scaleX(0.8);
 }
 
 

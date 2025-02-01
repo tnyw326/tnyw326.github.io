@@ -27,7 +27,7 @@ function type(msg, element, i, waitTime) {
       }, 750);
     } else if (contentEle.innerHTML === "") {
       setTimeout (()=> {
-        cursor2.style.animationPlayState = "paused";
+        cursor2.style.animationPlayState = 'paused';
         cursor2.style.color = "black";
         cursor3.style.color = "white";
         type(content, contentEle, 0, 10);
@@ -37,3 +37,20 @@ function type(msg, element, i, waitTime) {
 }
 
 type(intro, introEle, i, 75);
+
+// Get all nav links
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Function to handle active link highlighting
+function setActiveLink(event) {
+  // Remove active class from all links
+  navLinks.forEach(link => link.classList.remove('active'));
+
+  // Add active class to the clicked link
+  event.target.classList.add('active');
+}
+
+// Add click event listener to each nav link
+navLinks.forEach(link => {
+  link.addEventListener('click', setActiveLink);
+});
