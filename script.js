@@ -38,19 +38,32 @@ function type(msg, element, i, waitTime) {
 
 type(intro, introEle, i, 75);
 
-// Get all nav links
 const navLinks = document.querySelectorAll('nav ul li a');
+const sections = document.querySelectorAll('section');
 
-// Function to handle active link highlighting
-function setActiveLink(event) {
-  // Remove active class from all links
+function setActiveLinkOnClickNavBar(event) {
   navLinks.forEach(link => link.classList.remove('active'));
 
-  // Add active class to the clicked link
   event.target.classList.add('active');
 }
 
-// Add click event listener to each nav link
+function setActiveLinkOnScroll(entries) {
+  entries.forEach(entry => {
+    const link = document.querySelector(`nav ul li a[href="#${entry.target.id}"]`);
+    if (entry.isIntersecting) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+const observer = new IntersectionObserver(setActiveLinkOnScroll, {
+  threshold: 0.5
+});
+
+sections.forEach(section => observer.observe(section));
+
 navLinks.forEach(link => {
-  link.addEventListener('click', setActiveLink);
+  link.addEventListener('click', setActiveLinkOnClickNavBar);
 });
