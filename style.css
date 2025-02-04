@@ -82,8 +82,8 @@ section {
 }
 
 #after-intro {
-  padding-left: 50px;
-  padding-right: 50px;
+  width: 75vw;
+  margin: 0 auto;
 }
 
 #cursor1 {

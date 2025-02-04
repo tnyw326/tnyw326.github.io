@@ -48,10 +48,14 @@ function setActiveLinkOnClickNavBar(event) {
 }
 
 function setActiveLinkOnScroll(entries) {
+  if (!shouldUseObserver) return;
   entries.forEach(entry => {
     const link = document.querySelector(`nav ul li a[href="#${entry.target.id}"]`);
     if (entry.isIntersecting) {
-      link.classList.add('active');
+      if(shouldUseObserver){
+        link.classList.add('active');
+      }
+      
     } else {
       link.classList.remove('active');
     }
@@ -61,9 +65,25 @@ function setActiveLinkOnScroll(entries) {
 const observer = new IntersectionObserver(setActiveLinkOnScroll, {
   threshold: 0.5
 });
+let shouldUseObserver = true;
 
 sections.forEach(section => observer.observe(section));
 
 navLinks.forEach(link => {
   link.addEventListener('click', setActiveLinkOnClickNavBar);
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    shouldUseObserver = false;
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+    setTimeout(()=> {
+      shouldUseObserver = true;
+    }, 500);
+  });
 });
