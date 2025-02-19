@@ -17,23 +17,24 @@ function type(msg, element, i, waitTime) {
     element.innerHTML += msg.charAt(i);
     i++;
     setTimeout(() => type(msg, element, i, waitTime), waitTime);
-  } else {
-    if (aboutMeHeader.innerHTML === "") {
-      setTimeout (() => {
-        cursor1.style.animationPlayState = "paused";
-        cursor1.style.color = "black";
-        cursor2.style.color = "white";
-        type(aboutMe, aboutMeHeader, 0, 75);
-      }, 750);
-    } else if (contentEle.innerHTML === "") {
-      setTimeout (()=> {
-        cursor2.style.animationPlayState = 'paused';
-        cursor2.style.color = "black";
-        cursor3.style.color = "white";
-        type(content, contentEle, 0, 10);
-      }, 750)
-    }
   }
+  // } else {
+  //   if (aboutMeHeader.innerHTML === "") {
+  //     setTimeout (() => {
+  //       cursor1.style.animationPlayState = "paused";
+  //       cursor1.style.color = "black";
+  //       cursor2.style.color = "white";
+  //       type(aboutMe, aboutMeHeader, 0, 75);
+  //     }, 750);
+  //   } else if (contentEle.innerHTML === "") {
+  //     setTimeout (()=> {
+  //       cursor2.style.animationPlayState = 'paused';
+  //       cursor2.style.color = "black";
+  //       cursor3.style.color = "white";
+  //       type(content, contentEle, 0, 10);
+  //     }, 750)
+  //   }
+  // }
 }
 
 type(intro, introEle, i, 75);
