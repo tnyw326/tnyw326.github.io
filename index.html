@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tony Wang's Website</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#about">Home</a></li>
+        <li><a href="#project">My Projects</a></li>
+        <li><a href="#contact">Contact Info</a></li>
+      </ul>
+    </nav>
+    <section class="about" id="about">
+      <div>
+        <h1 class="glowing"><span id="intro"></span><span id="cursor1">|</span> </h1>
+        <div id="after-intro">
+          <h2>def <span style="color: white;">about_me():</span></h2>
+          <p id="intro-text">
+            I’m currently an undergraduate student at the University of British Columbia (UBC), majoring in Computer Science. I have a deep passion for technology and problem-solving, and I'm constantly exploring new ways to apply my skills to real-world challenges. Whether it's coding, developing websites, or diving into complex algorithms, I enjoy the process of turning ideas into functional solutions.
+          </p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="project" id="project">
+      <h2 class="project-h2">def <span style="color: white;">projects():</span></h2>
+      <div class="project-container">
+        <button id="prevBtn" class="arrow left-arrow">
+          <i class="fa-solid fa-chevron-left"></i>
+      </button>
+        
+        <div class="project-main-div">
+            <div class="project-content active">
+                <p class="project-name">Project 1</p>
+                <p class="project-details">This is the first project.</p>
+                <p class="project-technologies">Technologies used</p>
+            </div>
+            <div class="project-content">
+                <p class="project-name">Project 2</p>
+                <p class="project-details">This is the second project.</p>
+                <p class="project-technologies">Technologies used</p>
+            </div>
+            <div class="project-content">
+                <p class="project-name">Project 3</p>
+                <p class="project-details">This is the third project.</p>
+                <p class="project-technologies">Technologies used</p>
+            </div>
+        </div>
+
+        <button id="nextBtn" class="arrow right-arrow">
+          <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>def <span style="color: white;">contact_information():</span></h2>
+      <p>coming soon....</p>
+    </section>
+    <script src="script.js"></script>
+
+    <section>
+      <img src="./assets/background-sticker.gif" alt="Cool Animation" class="gif">
+    </section>
+  </body>
+</html>

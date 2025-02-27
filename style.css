@@ -22,6 +22,7 @@ body {
 }
 
 h1 {
+  background-color: wheat ;
   font-size: 50px;
   width: 100%;
   height: 45vh;
@@ -30,7 +31,7 @@ h1 {
 }
 
 h2 {
-  /* background-color: aqua; */
+  background-color: aqua;
   font-family: Jetbrains Mono;
   font-size: 30px;
   margin-left: 10px;
@@ -41,7 +42,7 @@ h2 {
 }
 
 p {
-  /* background-color: aqua; */
+  background-color: gray;
   font-size: 20px;
   margin: 10px;
   color: white;
@@ -74,6 +75,7 @@ section {
 }
 
 .about {
+  background-color: blue;
   display: flex;
   color: white;
   text-align: center;
@@ -83,7 +85,7 @@ section {
   display: flex;
   align-items: normal;
   margin: 0 auto;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 #after-intro {
@@ -98,19 +100,70 @@ section {
   animation: blink 1s step-end infinite;
 }
 
-/* #cursor2 {
-  color: black;
-  font-size: 35px;
-  font-weight: lighter;
-  animation: blink 1s step-end infinite;
+.project {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  height: 100vh;           /* Full viewport height */
+  text-align: center;      /* Ensures text is centered */
+  overflow: hidden;
 }
 
-#cursor3 {
-  color: black;
-  font-size: 25px;
-  font-weight: lighter;
-  animation: blink 1s step-end infinite;
-} */
+
+
+.project-h2 {
+  background-color: black;
+  display: block;
+  width: 75%;
+}
+
+.project-container {
+  background-color: blanchedalmond;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.project-main-div {
+  background-color: #1c1f24;
+  width: 90%;
+  display: flex;
+  overflow: hidden;
+  position:relative;
+}
+
+.project-content {
+  background-color: aquamarine;
+  min-width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+.project-content.active {
+  transform: translateX(0);
+}
+.arrow {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrow i {
+  color: #1c1f24;
+  transition: color 0.5s ease;
+  font-size: 100px;
+}
+
+.arrow i:hover {
+  color: #ccff00;
+}
 
 nav {
   position: fixed;
