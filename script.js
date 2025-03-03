@@ -1,4 +1,4 @@
-const intro = "Hi! My name is Tony Wang";
+const intro = "Hi! I'm Tony";
 const introEle = document.getElementById("intro");
 
 const aboutMe = "About Me";
@@ -89,3 +89,58 @@ navLinks.forEach(link => {
   });
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const projects = document.querySelectorAll(".project-content");
+//   let currentIndex = 0;
+
+//   function showProject(index) {
+//     projects.forEach((project, i) => {
+//       project.style.transform = `translateX(${i* 100}%)`;
+//     });
+// }
+
+//   document.getElementById("prevBtn").addEventListener("click", function () {
+//     currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+//     showProject(currentIndex);
+//   });
+
+//   document.getElementById("nextBtn").addEventListener("click", function () {
+//     currentIndex = (currentIndex + 1) % projects.length;
+//     showProject(currentIndex);
+//   });
+
+//   showProject(currentIndex);
+// });
+
+const projects = document.querySelectorAll(".project-content");
+let currentIndex = 1;
+
+document.getElementById("nextBtn").addEventListener("click", function () {
+  currentIndex += 1;
+  console.log(currentIndex);
+  if (currentIndex > projects.length) {
+    currentIndex = 1;
+    projects.forEach((project) => {
+      project.style.transform = `translateX(${0 * 100}%)`;
+    });
+  } else {
+    projects.forEach((project) => {
+      project.style.transform = `translateX(${(currentIndex - 1) * -100}%)`;
+    });
+  }
+});
+
+document.getElementById("prevBtn").addEventListener("click", function () {
+  currentIndex -= 1;
+  console.log(currentIndex);
+  if (currentIndex < 1) {
+    currentIndex = 3;
+    projects.forEach((project) => {
+      project.style.transform = `translateX(${(projects.length-1) * -100}%)`;
+    });
+  } else {
+    projects.forEach((project) => {
+      project.style.transform = `translateX(${(currentIndex - 1) * -100}%)`;
+    });
+  }
+});
