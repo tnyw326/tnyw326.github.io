@@ -14,7 +14,6 @@ body {
   font-family: sans-serif;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -22,40 +21,40 @@ body {
 }
 
 h1 {
-  font-size: 55px;
+  display: flex;
+  font-size: 4vmax;
   width: 100%;
-  height: 25vh;
+  height: 30%;
   text-align: center;
-  padding-top: 10vh;
+  justify-content: center;
 }
 
 h2 {
   font-family: Jetbrains Mono;
-  font-size: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  font-size: 1.5vmax;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
   color: #ccff00;
   text-align: left;
 }
 
 h3 {
-  font-size: 23px;
-  margin: 20px;
+  font-size: 1.3vmax;
+  margin: 2vh;
 }
 
 p {
   /* background-color: gray; */
-  font-size: 18px;
-  margin: 10px;
+  font-size: 1vmax;
+  margin: 1vh;
   color: white;
-  line-height: 35px;
+  line-height: 180%;
   font-family: Jetbrains Mono;
 }
 
 #intro-text {
-  margin-left: 100px;
-  margin-right: 30px;
+  padding-left: 5vw;
   text-align: left;
 }
 
@@ -98,7 +97,7 @@ section {
 
 #cursor1 {
   color: white;
-  font-size: 80px;
+  font-size: 4.2vmax;
   font-weight: lighter;
   animation: blink 1s step-end infinite;
 }
@@ -107,16 +106,16 @@ section {
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;     /* Centers horizontally */
-  justify-content: center; /* Centers vertically */
-  height: 100vh;           /* Full viewport height */
-  text-align: center;      /* Ensures text is centered */
+  align-items: center;     
+  justify-content: center; 
+  height: 100vh;           
+  text-align: center; 
   overflow: hidden;
 }
 
 .hobbies-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin: auto;
 }
 
@@ -126,36 +125,17 @@ section {
 
 .hobbies {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .hobbies i {
-  font-size: 20px;
+  font-size: 40px;
 }
 
-
-.fa-basketball {
-  color: #f88158;
-}
-
-.fa-camera-retro {
-  color: #9CA3AF;
-}
-
-.fa-book {
-  color: #A52A2A;
-}
-
-.fa-laptop {
-  color: #00FF00;
-}
-
-.fa-gamepad {
-  color: #00C3E3;
-}
-
-.fa-tree {
-  color: #228B22;
+svg {
+  width: 40px;
+  height: 40px;
 }
 
 .project-h2 {
@@ -216,23 +196,14 @@ section {
 .arrow i {
   color: #1c1f24;
   transition: color 0.5s ease;
-  font-size: 100px;
-  margin: 50px;
+  font-size: 10vmax;
+  margin: 2vw;
 }
 
 .arrow i:hover {
   color: white;
 }
 
-i {
-  transition: transform 0.3s ease;
-  margin: 20px;
-  vertical-align: middle;
-}
-
-i:hover {
-  transform: scale(1.3);
-}
 
 .icon {
   vertical-align: middle;
@@ -240,6 +211,10 @@ i:hover {
   margin-left: 20px;
   margin-right: 20px;
   display: inline-block;
+  margin: 20px;
+  vertical-align: middle;
+  width: 2.5vmax;
+  height: 2.5vmax;
 }
 
 .icon:hover {
