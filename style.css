@@ -10,6 +10,7 @@ html {
 
 body {
   height: 100%;
+  background-color: black;
   margin: 0;
   font-family: sans-serif;
 }
@@ -59,17 +60,13 @@ p {
 }
 
 section {
-  background-color: black;
   justify-content: center;
   height: 100vh;
   display: flex;
   align-items: center;
   margin: 0 auto;
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-x: hidden;
-}
+  width: 100%;
+  }
 
 .glowing {
   text-shadow: 0 0 10px #8DB255, 0 0 10px #8DB255, 0 0 1px #8DB255, 0 0 3px #8DB255, 0 0 1px #8DB255, 0 0 5px #8DB255, 0 0 10px #8DB255;
@@ -81,7 +78,6 @@ section {
   display: flex;
   color: white;
   text-align: center;
-  width: 100%;
   justify-content: center;
   height: 100vh;
   display: flex;
@@ -108,9 +104,9 @@ section {
   flex-direction: column;
   align-items: center;     
   justify-content: center; 
-  height: 100vh;           
   text-align: center; 
   overflow: hidden;
+  width: 100%;
 }
 
 .hobbies-container {
@@ -144,7 +140,7 @@ svg {
   width: 75%;
 }
 
-.project-container {
+.experience-container {
   /* background-color: blanchedalmond; */
   width: 65%;
   display: flex;
@@ -154,15 +150,18 @@ svg {
   overflow: hidden;
 }
 
-.project-main-div {
+
+.content-container {
   /* background-color: #1c1f24; */
   display: flex;
   width: 90%;
   overflow: hidden;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
-.project-content {
+
+.experience-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,12 +170,40 @@ svg {
   transition: transform 0.5s ease-in-out;
 }
 
-.project-name {
+.project-name, .company{
   text-align: left;
 }
 
-.project-details {
-  text-align: justify;
+.job-info {
+  display: flex;
+}
+
+.job-title {
+  text-align: left;
+  width: 40%;
+}
+
+
+.location-container, .date-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-location-dot, .fa-calendar-days {
+  display: inline-block;
+  vertical-align: bottom;
+  color: darkgray;
+  font-size: 1vmax;
+}
+.date-and-location {
+  /* background-color: green; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.project-details, .job-details {
+  text-align: left;
 }
 
 .project-technologies {
@@ -206,7 +233,6 @@ svg {
 
 
 .icon {
-  vertical-align: middle;
   transition: transform 0.3s ease;
   margin-left: 20px;
   margin-right: 20px;
@@ -236,6 +262,43 @@ svg {
 .fa-js {
   color: #f0db4f;
 }
+
+.experience-nav {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 20px; /* Space between items */
+  flex-wrap: wrap; /* Allows items to move to a new line if needed */
+}
+
+.experience-nav p {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.experience-nav p:hover {
+  background-color: #ccff00;
+  color: black;
+}
+
+.option {
+  min-width: 180px;
+
+}
+
+.selected {
+  background-color: #ccff00;
+  color: black !important;
+}
+
+.hide {
+  display: none;
+}
+
 
 nav {
   position: fixed;

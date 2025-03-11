@@ -112,10 +112,10 @@ navLinks.forEach(link => {
 //   showProject(currentIndex);
 // });
 
-const projects = document.querySelectorAll(".project-content");
 let currentIndex = 1;
 
 document.getElementById("nextBtn").addEventListener("click", function () {
+  const projects = document.querySelectorAll(".selected-content");
   currentIndex += 1;
   console.log(currentIndex);
   if (currentIndex > projects.length) {
@@ -131,6 +131,8 @@ document.getElementById("nextBtn").addEventListener("click", function () {
 });
 
 document.getElementById("prevBtn").addEventListener("click", function () {
+  const projects = document.querySelectorAll(".selected-content");
+
   currentIndex -= 1;
   console.log(currentIndex);
   if (currentIndex < 1) {
@@ -144,3 +146,59 @@ document.getElementById("prevBtn").addEventListener("click", function () {
     });
   }
 });
+
+const projectNav = document.getElementById("select-project");
+const workNav = document.getElementById("select-work");
+const projectContent = document.getElementById("project-main-div");
+const workContent = document.getElementById("work-main-div");
+const projectDivs = Array.from(document.getElementsByClassName("project-content"));
+const workDivs = Array.from(document.getElementsByClassName("work-content"));
+
+function showExperience(type) {
+
+  const experienceDivs = document.querySelectorAll(".experience-content");
+  experienceDivs.forEach((experience) => {
+    experience.style.transform = `translateX(${0 * 100}%)`;
+  });
+
+  if (type === "work") {
+    
+    currentIndex = 1;
+    workDivs.forEach((work) => {
+      work.classList.add("selected-content");
+    });
+    projectDivs.forEach((project) => {
+      project.classList.remove("selected-content");
+    });
+    projectNav.classList.remove("selected");
+    projectContent.classList.add("hide");
+    workContent.classList.remove("hide");
+    workNav.classList.add("selected");
+  } else {
+    currentIndex = 1;
+    projectDivs.forEach((project) => {
+      project.classList.add("selected-content");
+    });
+    workDivs.forEach((work) => {
+      work.classList.remove("selected-content");
+    }
+    );
+    projectNav.classList.add("selected");
+    projectContent.classList.remove("hide");
+    workContent.classList.add("hide");
+    workNav.classList.remove("selected");
+  }
+}
+function adjustDivHeight() {
+  const projectMainDiv = document.getElementById('project-main-div');
+  const workMainDiv = document.getElementById('work-main-div');
+  
+  const projectHeight = projectMainDiv.offsetHeight;
+  const workHeight = workMainDiv.offsetHeight;
+  
+  const maxHeight = Math.max(projectHeight, workHeight);
+  
+  projectMainDiv.style.minHeight = `${maxHeight}px`;
+  workMainDiv.style.minHeight = `${maxHeight}px`;
+}
+
