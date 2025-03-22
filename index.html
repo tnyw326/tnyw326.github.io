@@ -339,17 +339,81 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2>def <span style="color: white">contact_information():</span></h2>
-      <p>coming soon....</p>
+      <h2 id="contact-h2">
+        def <span style="color: white">contact_information():</span>
+      </h2>
+      <div id="contact-section-container">
+        <div id="contact-container">
+          <div id="contact-info-and-message-container">
+            <div id="contact-info-container">
+              <div class="icon-text-container">
+                <a class="link" href="mailto:wangtony2003@gmail.com">
+                  <i class="fa-solid fa-envelope contact-icon"></i>
+                </a>
+                <a class="link" href="mailto:wangtony2003@gmail.com">
+                  <p id="email">wangtony2003@gmail.com</p>
+                </a>
+              </div>
+              <div class="icon-text-container">
+                <a
+                  class="link"
+                  href="https://www.linkedin.com/in/tonyw03/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin contact-icon"></i>
+                </a>
+
+                <a
+                  class="link"
+                  href="https://www.linkedin.com/in/tonyw03/"
+                  target="_blank"
+                >
+                  <p id="linkedin">Tony Wang</p>
+                </a>
+              </div>
+              <div class="icon-text-container">
+                <a
+                  class="link"
+                  href="https://github.com/tnyw326"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github contact-icon"></i>
+                </a>
+                <a
+                  class="link"
+                  href="https://github.com/tnyw326"
+                  target="_blank"
+                >
+                  <p id="github">tnywng326</p>
+                </a>
+              </div>
+            </div>
+            <div id="message-container">
+              <p class="input-label">Name</p>
+              <textarea class="input" id="name-input"></textarea>
+              <p class="input-label">Email</p>
+              <textarea class="input" id="email-input"></textarea>
+              <p class="input-label">Message</p>
+              <textarea class="input" id="input-box"></textarea>
+              <button
+                id="submit-btn"
+                class="submit-btn"
+                onclick="submitMessage()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="photo-container">
+          <img
+            src="./assets/background-sticker.gif"
+            alt="Cool-Animation"
+            class="gif"
+          />
+        </div>
+      </div>
     </section>
     <script src="script.js"></script>
-
-    <section>
-      <img
-        src="./assets/background-sticker.gif"
-        alt="Cool-Animation"
-        class="gif"
-      />
-    </section>
   </body>
 </html>
